@@ -2,7 +2,7 @@
 
 #A Reddit media scraper with customisable filters#
 
-RedHole is a media scraper for Reddit. It lets you download any media embedded within your saved posts, the latest hot media files from all your subscribed subreddits, or specify a specific subreddit to scrape for media. 
+RedHole is a media scraper for Reddit. It lets you download any image or video embedded within your saved posts, the latest hot media files from all your subscribed subreddits, or specify a specific subreddit to scrape for media. 
 
 With Redhole, you can easily keep an up-to-date local library of Reddit media, instantly create ad-hoc image collections for posting to imgur, or quickly grab a specific number of images from a subject-specific subreddit. RedHole ensures the same file is never downloaded twice, and can also organise your downloaded media into folders by subreddit.
 
