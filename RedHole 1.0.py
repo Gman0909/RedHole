@@ -1,11 +1,11 @@
 
 # RedHole - Reddit Media Scraper
 # /u/Augmentl, 2017
-# This script will download the last [x] images you have saved in your Reddit user account.
+# This script will download the last [x] images you have saved in your Reddit user account, or from any subreddit.
 # Please make sure you edit the client_id and client_secret variables in CONFIG.INI
 # You can get your Client ID and Secret from https://www.reddit.com/prefs/apps (create a new app and select script for personal use)
 
-# Use -a at the command line to override and scan all subs in the ini file, or -m to scan all your subscribed subs ;) 
+# Use -a at the command line to scan all subs in the ini file, -m to scan all your subscribed subs, -s [string] for specific sub 
 
 import sys
 import praw
