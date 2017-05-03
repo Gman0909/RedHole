@@ -6,7 +6,7 @@ RedHole is a media scraper for Reddit. It lets you download any media embedded w
 
 With Redhole, you can easily keep an up-to-date local library of Reddit media, instantly create ad-hoc image collections for posting to imgur, or quickly grab a specific number of images from a subject-specific subreddit. RedHole ensures the same file is never downloaded twice, and can also organise your downloaded media into folders by subreddit.
 
-##Setup##
+#Setup#
 
 RedHole requires Python 2.7 with PRAW installed. RedHole has been tested on Windows and MacOS. 
 
