@@ -262,11 +262,11 @@ def get_matching_subs(query):
 	results = list(reddit.subreddits.search_by_name(query, include_nsfw=True, exact=False))
 	for item in results:
 		try:
-			print item.display_name
+			#print item.display_name
 			subreddits.append(item.display_name)
 		except:
 			None
-	print subreddits
+	#print subreddits
 
 print "RedHole - Reddit Media Scraper, @Augmentl, 2017"
 print 'Scan options: -a for all subs in CONFIG.ini, -m for all subscribed subs, -s [string] for specific sub'
@@ -310,7 +310,6 @@ try:
         subreddits += options.query.split(',')
         get_sub_images(int(limiter))
     elif len(options.subsearch) > 0:
-	print subreddits
         #print 'option 4 - seach for subs', options.subsearch
 	get_matching_subs(options.subsearch)
         get_sub_images(int(limiter))
