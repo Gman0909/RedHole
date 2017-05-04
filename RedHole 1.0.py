@@ -5,7 +5,7 @@
 # Please make sure you edit the client_id and client_secret variables in CONFIG.INI
 # You can get your Client ID and Secret from https://www.reddit.com/prefs/apps (create a new app and select script for personal use)
 
-# Use -a at the command line to scan all subs in the ini file, -m to scan all your subscribed subs, -s [string] for specific sub 
+# Use -a at the command line to scan all subs in the ini file, -m to scan all your subscribed subs, -s [string] for specific sub, -q [string] to search matching subs
 
 import sys
 import praw
@@ -252,7 +252,21 @@ def get_input_parameters():
     parser.add_option('-a', action ='store_true', dest='allsubs', default = False)
     parser.add_option('-m', action ='store_true', dest='mysubs', default = False)
     parser.add_option('-s', action='store', type='string', nargs = 1, dest='query', default = '')
+    parser.add_option('-q', action='store', type='string', nargs = 1, dest='subsearch', default = '')
     (options, args) = parser.parse_args()
+    
+def get_matching_subs(query):
+	global reddit
+	global subreddits
+	subreddits = []
+	results = list(reddit.subreddits.search_by_name(query, include_nsfw=True, exact=False))
+	for item in results:
+		try:
+			print item.display_name
+			subreddits.append(item.display_name)
+		except:
+			None
+	print subreddits
 
 print "RedHole - Reddit Media Scraper, @Augmentl, 2017"
 print 'Scan options: -a for all subs in CONFIG.ini, -m for all subscribed subs, -s [string] for specific sub'
@@ -282,6 +296,7 @@ if not limiter:
 	
 # Get the list of images in the user's Saved folder on Reddit, and get downloadin'
 
+
 try:
     if options.allsubs:
         #print 'option 1 - allsubs'
@@ -292,15 +307,20 @@ try:
     elif len(options.query) > 0:
         #print 'option 3 - seach query', options.query
         subreddits = []
-        subreddits += [options.query]
+        subreddits += options.query.split(',')
+        get_sub_images(int(limiter))
+    elif len(options.subsearch) > 0:
+	print subreddits
+        #print 'option 4 - seach for subs', options.subsearch
+	get_matching_subs(options.subsearch)
         get_sub_images(int(limiter))
     else:
         #print 'default - saved posts'
         get_saved_images(int(limiter))
 
 except:
-    print 'Failed to retrieve images. Have you checked your authentication details?'
-    sys.exit(0)
+	print 'Failed to retrieve images. Have you checked your authentication details?'
+	sys.exit(0)
 
 print
 print "%s images matched your selected subreddits. Have a nice day!" % (image_counter)
