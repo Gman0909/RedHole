@@ -20,5 +20,6 @@ Your command line options are:
 * -a to scan all subs in the .ini file, not just Saved posts.
 * -m to scan all your subscribed subreddits for the latest Hot posts
 * -s [subreddit] to search for a specific subreddit, e.g. **"python Redhole1.0.py -s wallpapers"**
+* -q [subreddit] to search and scrape any subreddits matching the keyword, e.g. **"python Redhole1.0.py -s cat"**
 
 Enjoy!
