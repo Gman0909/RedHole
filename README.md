@@ -8,7 +8,7 @@ With Redhole, you can easily keep an up-to-date local library of Reddit media, i
 
 #Setup#
 
-RedHole requires Python 2.7 with PRAW installed. RedHole has been tested on Windows and MacOS. 
+RedHole requires Python 3 with PRAW installed. RedHole has been tested on Windows and MacOS. 
 
 You'll need to get your authentication details from https://www.reddit.com/prefs/apps. Select new app and select script for personal use, then copy the ID and Secret fields into their respective entries in CONFIG.ini. 
 
